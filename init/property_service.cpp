@@ -534,7 +534,7 @@ uint32_t CheckPermissions(const std::string& name, const std::string& value,
     const char* type = nullptr;
     property_info_area->GetPropertyInfo(name.c_str(), &target_context, &type);
 
-    if (!CheckMacPerms(name, target_context, source_context.c_str(), cr)) {
+    if (!is_exempt(name, source_context) && !CheckMacPerms(name, target_context, source_context.c_str(), cr)) {
         // Info about contexts are available also in the selinux denials in the kernel message,
         // but they may be suppressed by the ratelimiter, in which case this log from init can be
         // helpful.
