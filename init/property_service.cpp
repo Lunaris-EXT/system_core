@@ -28,6 +28,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/ioctl.h>
 #include <sys/mman.h>
 #include <sys/poll.h>
 #include <sys/select.h>
@@ -36,6 +37,7 @@
 #include <sys/un.h>
 #include <unistd.h>
 #include <wchar.h>
+#include <linux/fs.h>
 
 #include <map>
 #include <memory>
