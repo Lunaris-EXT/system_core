@@ -339,6 +339,7 @@ static BatteryMonitor::PowerSupplyType readRawPowerSupplyType(const String8& pat
     auto ret = mapSysfsString(buf.c_str(), supplyTypeMap);
     if (!ret) {
         *ret = BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_UNKNOWN;
+    }
 
     return static_cast<BatteryMonitor::PowerSupplyType>(*ret);
 }
